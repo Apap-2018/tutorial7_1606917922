@@ -35,6 +35,7 @@ public class PilotController {
     
     @GetMapping(value= "/view/{licenseNumber}")
     public PilotModel pilotView(@PathVariable("licenseNumber") String licenseNumber) {
+    	System.out.println("pilot: " + licenseNumber);
     	PilotModel pilot = pilotService.getPilotDetailByLicenseNumber(licenseNumber).get();
     	return pilot;
    }
@@ -57,7 +58,7 @@ public class PilotController {
     	
     	pilot.setName(name);
     	pilot.setFlyHour(flyHour);
-    	return "update";
+    	return "update berhasil";
     }
     
     @Autowired
